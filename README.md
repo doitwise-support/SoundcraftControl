@@ -378,9 +378,10 @@ Commands use the format: `3:::SETD^[channel].[parameter]^[value]`
 - **Stream Deck**: Any Elgato Stream Deck model
 - **Software**: Stream Deck Software 6.5 or later
 
-## 📞 Support
+## 📞 Support & Professional Services
 
-Having issues? Check these common solutions:
+### Technical Support
+Having issues? Check these common solutions first:
 
 1. **Can't connect to mixer**:
    - Verify IP address in mixer settings
@@ -401,6 +402,43 @@ Having issues? Check these common solutions:
    - Ensure at least one toggle option (mute or solo) is selected
    - Verify channel supports mute/solo operations
    - Check mixer connection status
+
+For direct technical support, contact us at **support@doitwise.co**
+
+### Professional Services
+
+#### 🎯 **Free 30-Minute Consultation**
+Get personalized guidance on optimizing your plugin setup and audio workflow. Our experts will help you:
+- Configure actions for your specific use case
+- Design efficient control layouts for your Stream Deck
+- Optimize mixer settings for your application
+- Troubleshoot complex setup scenarios
+
+#### 🎛️ **Audio Workflow Programming**
+Professional Soundcraft UI mixer programming services:
+- Custom audio routing configurations
+- Complex multi-zone setups
+- Performance-optimized mixer scenes
+- Integration with broadcast and streaming systems
+- Professional venue audio system design
+
+#### 🚀 **Plugin Feature Extensions**
+Need additional functionality? We offer custom plugin development:
+- New action types for specialized workflows
+- Integration with other audio software
+- Custom visual feedback and indicators
+- Advanced automation features
+- Enterprise-specific requirements
+
+#### 💼 **Custom Development Solutions**
+Complete audio control system development:
+- Bespoke Stream Deck plugins for any audio hardware
+- Integration with professional audio software (Pro Tools, Logic, etc.)
+- Custom hardware integration solutions
+- Workflow automation systems
+- Multi-platform audio control applications
+
+**Ready to enhance your audio workflow?** Contact us at **support@doitwise.co** to discuss your requirements and receive a personalized consultation.
 
 ---
 
