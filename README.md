@@ -430,13 +430,6 @@ Need additional functionality? We offer custom plugin development:
 - Advanced automation features
 - Enterprise-specific requirements
 
-#### 💼 **Custom Development Solutions**
-Complete audio control system development:
-- Bespoke Stream Deck plugins for any audio hardware
-- Integration with professional audio software (Pro Tools, Logic, etc.)
-- Custom hardware integration solutions
-- Workflow automation systems
-- Multi-platform audio control applications
 
 **Ready to enhance your audio workflow?** Contact us at **support@doitwise.co** to discuss your requirements and receive a personalized consultation.
 
