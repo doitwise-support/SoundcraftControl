@@ -32,7 +32,7 @@ Control your Soundcraft UI 16 mixer directly from your Elgato Stream Deck! Perfe
 
 ## ✨ Features
 
-### Five Powerful Actions
+### Eight Powerful Actions
 
 #### 1. **Soundcraft Custom Action**
 Execute any custom Soundcraft command with a single button press.
@@ -81,6 +81,38 @@ Dedicated mute and solo toggle control with real-time status indicators.
 - Real-time status updates from mixer
 - Volume level display with toggle controls
 
+#### 6. **Soundcraft Pan Toggle Action** 🆕
+Professional pan position control with one-button cycling between Left, Center, and Right positions.
+
+**Perfect for:**
+- Quick pan adjustments with [L], [C], [R] indicators
+- Professional stereo field management
+- Real-time pan position feedback from mixer
+- Combined pan control with mute/volume display
+- Stereo channel pan synchronization
+
+#### 7. **Soundcraft Custom Dial Action** 🆕
+Universal parameter control system allowing you to control ANY mixer parameter using encoder dials.
+
+**Perfect for:**
+- Effects control (reverb, delay, chorus) with `fx.0.value^`, `fx.1.value^`, `fx.2.value^`
+- Custom EQ adjustments with any EQ parameter
+- Professional de-esser control with `deesser.threshold^`
+- Advanced gain staging with `gain^` parameter
+- Pan control with `pan^` parameter
+- Any mixer parameter with real-time percentage display
+
+#### 8. **Soundcraft Custom Parameter Button Control** 🆕
+Universal parameter control system allowing you to control ANY mixer parameter using buttons with increase/decrease functionality.
+
+**Perfect for:**
+- Effects buttons (Reverb+, Reverb-, Delay+, Delay-) with `fx.0.value^`, `fx.1.value^`, `fx.2.value^`
+- Pan control buttons (Pan Left, Pan Right) with `pan^` parameter
+- Gain control buttons (Gain+, Gain-) with `gain^` parameter
+- EQ adjustment buttons with any EQ parameter
+- Precise parameter stepping with configurable step sizes
+- Long-press mute functionality for emergency control
+
 ### Advanced Features
 
 #### 🎧 **Stereo Channel Support**
@@ -92,6 +124,8 @@ Control stereo pairs effortlessly:
 #### 🔄 **Real-Time Feedback**
 - **Live volume display**: See exact volume percentages on your Stream Deck
 - **Mute indicators**: [M] shows when channels are muted
+- **Solo indicators**: [S] shows when channels are solo
+- **Pan indicators**: [L], [C], [R] show current pan position
 - **Connection status**: Know when your mixer is connected or offline
 - **Visual confirmation**: Button feedback shows command execution
 
@@ -179,6 +213,57 @@ Control stereo pairs effortlessly:
    - Button Title: Custom label (optional)
 5. **Button Press**: Toggles selected mute/solo states
 
+#### For Pan Toggle Action: 🆝
+1. **IP Address**: Enter your mixer's IP
+2. **Channel Name**: 
+   - Single channel: `i.2`
+   - Stereo pair: `i.2,i.3`
+3. **Button Title**: Custom label (optional)
+4. **Display Options**:
+   - ☐ Show Mute State - Display [M] when muted
+   - ☐ Show Volume Level - Display volume percentage
+5. **Button Press**: Cycles pan through Left (0.0) → Center (0.5) → Right (1.0)
+6. **Pan Display**: Shows [L], [C], [R], or N/A for other positions
+
+#### For Custom Dial Action: 🆕
+1. **IP Address**: Enter your mixer's IP
+2. **Channel Name**: 
+   - Single channel: `i.2`
+   - Stereo pair: `i.2,i.3`
+3. **Custom Dial Parameter**: Enter any mixer parameter:
+   - **Effects**: `fx.0.value^` (reverb), `fx.1.value^` (delay), `fx.2.value^` (chorus)
+   - **Pan**: `pan^`
+   - **Gain**: `gain^`
+   - **EQ**: `eq.b1.freq^`, `eq.b1.gain^`
+   - **De-esser**: `deesser.threshold^`
+4. **Step Size**: Adjustment per dial rotation (default: 0.05)
+5. **Optional Settings**:
+   - ☐ Mute on Dial Press - Toggle mute when pressing dial
+   - ☐ Show Mute State - Display [M] when muted
+   - Button Title: Custom label (e.g., "Vocal Reverb")
+6. **Dial Display**: Shows parameter percentage (0-100%) with visual bar
+
+#### For Custom Parameter Button Control: 🆕
+1. **IP Address**: Enter your mixer's IP
+2. **Channel Name**: 
+   - Single channel: `i.2`
+   - Stereo pair: `i.2,i.3`
+3. **Custom Parameter**: Enter any mixer parameter:
+   - **Effects**: `fx.0.value^` (reverb), `fx.1.value^` (delay), `fx.2.value^` (chorus)
+   - **Pan**: `pan^`
+   - **Gain**: `gain^`
+   - **EQ**: `eq.b1.freq^`, `eq.b1.gain^`
+   - **De-esser**: `deesser.threshold^`
+4. **Increase Parameter Value**: 
+   - ☑ **Checked**: Button press increases parameter value (e.g., "Reverb+")
+   - ☐ **Unchecked**: Button press decreases parameter value (e.g., "Reverb-")
+5. **Step Size**: Adjustment per button press (default: 0.05)
+6. **Optional Settings**:
+   - ☐ Toggle Mute on Long Press - Hold button to mute
+   - ☐ Show Mute State - Display [M] when muted
+   - Button Title: Custom label (e.g., "Vocal Reverb+")
+7. **Button Display**: Shows parameter percentage (0-100%) in title
+
 ### 3. **Common Channel Names**
 - **Analog Inputs**: `a.0`, `a.1`, `a.2`, etc.
 - **Digital Inputs**: `i.0`, `i.1`, `i.2`, etc.
@@ -224,6 +309,12 @@ Control stereo pairs effortlessly:
 - **Button Title**: "Music"
 - **Usage**: Press to toggle mute, shows "[M] Music" when muted
 
+**Pan Toggle Action**: "Music Pan"
+- **Channel**: `l.0,l.1`
+- **Button Title**: "Music"
+- **Display Options**: Show Volume Level enabled
+- **Usage**: Press to cycle pan: Left → Center → Right → Left, shows "[L] Music 80%" or "[C] Music 80%"
+
 ### Example 2: Multi-Meeting Setup
 **Goal**: Manage audio from two different meeting platforms
 
@@ -240,7 +331,12 @@ Control stereo pairs effortlessly:
 - **Meeting 2 Mute (Toggle)**: Channel `a.1` - Quick mute toggle with [M] indicator
 - **Master Solo (Toggle)**: Channel `l.0,l.1` - Solo control with [S] indicator
 
-Each control can independently manage volume, mute, and solo for different audio sources.
+**Pan Controls**:
+- **Meeting 1 Pan (Pan Toggle)**: Channel `a.0` - Position meeting audio in stereo field
+- **Meeting 2 Pan (Pan Toggle)**: Channel `a.1` - Independent pan control for second meeting
+- **Master Pan (Pan Toggle)**: Channel `l.0,l.1` - Overall stereo positioning
+
+Each control can independently manage volume, mute, solo, and pan for different audio sources.
 
 ### Example 3: Live Streaming
 **Goal**: Professional audio switching during stream
@@ -279,6 +375,105 @@ Each control can independently manage volume, mute, and solo for different audio
 
 **Result**: Complete vocal chain control with one dial, real-time visual feedback, and clear parameter identification.
 
+### Example 6: Professional Effects Control 🆕
+**Goal**: Complete effects processing for vocals using Custom Dial Actions
+
+**Setup**: Four Custom Dial Actions controlling vocal channel i.2
+
+**Vocal Reverb Control**:
+- **Channel**: `i.2`
+- **Custom Dial Parameter**: `fx.0.value^`
+- **Button Title**: "Vocal Reverb"
+- **Usage**: Rotate to add room ambience (0% = dry, 100% = wet)
+
+**Vocal Delay Control**:
+- **Channel**: `i.2` 
+- **Custom Dial Parameter**: `fx.1.value^`
+- **Button Title**: "Vocal Delay"
+- **Usage**: Rotate to add echo effect (0% = no delay, 100% = full delay)
+
+**Vocal Chorus Control**:
+- **Channel**: `i.2`
+- **Custom Dial Parameter**: `fx.2.value^`
+- **Button Title**: "Vocal Chorus"
+- **Usage**: Rotate to add width and texture (0% = no chorus, 100% = full chorus)
+
+**Vocal De-esser Control**:
+- **Channel**: `i.2`
+- **Custom Dial Parameter**: `deesser.threshold^`
+- **Button Title**: "Vocal DeEss"
+- **Usage**: Rotate to control sibilance (0% = no processing, 100% = maximum reduction)
+
+**Professional Workflow**:
+1. **Set base vocal level** with volume control
+2. **Add spatial depth** with Vocal Reverb dial (typically 15-30%)
+3. **Create rhythmic interest** with Vocal Delay dial (typically 10-25%)
+4. **Enhance vocal width** with Vocal Chorus dial (typically 5-15%)
+5. **Control harsh "S" sounds** with Vocal DeEss dial (adjust until sibilance is controlled)
+6. **Emergency mute** by pressing any dial
+
+**Result**: Complete professional vocal processing with real-time visual feedback showing exact effect percentages.
+
+### Example 7: Professional Button Effects Control 🆕
+**Goal**: Precise effects adjustment using Custom Parameter Button Controls
+
+**Setup**: Six Custom Parameter Button Controls for vocal channel i.2
+
+**Reverb Control Buttons**:
+- **Reverb+ Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `fx.0.value^`
+  - **Increase Parameter Value**: ☑ Checked
+  - **Button Title**: "Vocal Reverb+"
+  - **Usage**: Each press adds 5% reverb
+
+- **Reverb- Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `fx.0.value^`
+  - **Increase Parameter Value**: ☐ Unchecked
+  - **Button Title**: "Vocal Reverb-"
+  - **Usage**: Each press removes 5% reverb
+
+**Delay Control Buttons**:
+- **Delay+ Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `fx.1.value^`
+  - **Increase Parameter Value**: ☑ Checked
+  - **Button Title**: "Vocal Delay+"
+
+- **Delay- Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `fx.1.value^`
+  - **Increase Parameter Value**: ☐ Unchecked
+  - **Button Title**: "Vocal Delay-"
+
+**Pan Control Buttons**:
+- **Pan Left Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `pan^`
+  - **Increase Parameter Value**: ☐ Unchecked
+  - **Button Title**: "Pan Left"
+  - **Usage**: Moves pan toward left (0%)
+
+- **Pan Right Button**:
+  - **Channel**: `i.2`
+  - **Custom Parameter**: `pan^`
+  - **Increase Parameter Value**: ☑ Checked
+  - **Button Title**: "Pan Right"
+  - **Usage**: Moves pan toward right (100%)
+
+**Professional Button Workflow**:
+1. **Start with dry vocal** - All effects at 0%
+2. **Add reverb gradually** - Press "Vocal Reverb+" 3-6 times (15-30%)
+3. **Add delay sparingly** - Press "Vocal Delay+" 2-5 times (10-25%)
+4. **Position in stereo field** - Use "Pan Left"/"Pan Right" as needed
+5. **Fine-tune effects** - Use + and - buttons for precise control
+6. **Emergency mute** - Long press any button (if enabled)
+
+**Real-Time Feedback**: Both "Reverb+" and "Reverb-" buttons show the same current percentage (e.g., "Vocal Reverb+ | 25%" and "Vocal Reverb- | 25%"), updating instantly when either is pressed.
+
+**Result**: Precise, tactile control over effects with immediate visual feedback and synchronized button displays.
+
 ## 🔧 Advanced Tips
 
 ### Advanced Dial Controller Pro Tips 🆕
@@ -301,6 +496,32 @@ Each control can independently manage volume, mute, and solo for different audio
 - **Quick Reference**: Current parameter always visible in dial title
 - **Progress Indication**: Horizontal bar gives instant visual feedback
 
+### Custom Dial Action Pro Tips 🆕
+
+#### **Effects Control Strategy**
+- **Reverb** (`fx.0.value^`): Start subtle (15-30%), add gradually for space
+- **Delay** (`fx.1.value^`): Use sparingly (10-25%) to avoid muddiness
+- **Chorus** (`fx.2.value^`): Less is more (5-15%) for natural width enhancement
+- **Layer Effects**: Combine multiple effects for rich, professional sound
+
+#### **Parameter Discovery**
+- **Standard Parameters**: `pan^`, `gain^`, `mute^`, `solo^`
+- **EQ Parameters**: `eq.b1.freq^`, `eq.b1.q^`, `eq.b1.gain^` (for EQ band 1)
+- **Dynamics**: `deesser.threshold^`, `deesser.ratio^`, `deesser.freq^`
+- **Effects**: `fx.0.value^`, `fx.1.value^`, `fx.2.value^` (FX sends)
+- **Experiment**: Try other parameter names - the system supports ANY parameter!
+
+#### **Efficient Workflows**
+- **Name Everything**: Use descriptive titles like "Vocal Reverb" not just "Reverb"
+- **Group by Function**: Place related controls together (all vocal effects)
+- **Visual Feedback**: Watch percentage displays for precise control
+- **Mute Integration**: Enable "Mute on Dial Press" for emergency controls
+
+#### **Professional Setup Examples**
+- **Vocal Chain**: Gain → De-esser → Reverb → Delay
+- **Instrument Effects**: EQ Freq → EQ Gain → Chorus → Reverb  
+- **Master Bus**: Pan → Volume (using standard controllers) + Effects (Custom Dial)
+
 ### Command Syntax
 Commands use the format: `3:::SETD^[channel].[parameter]^[value]`
 
@@ -310,7 +531,9 @@ Commands use the format: `3:::SETD^[channel].[parameter]^[value]`
 - `gain` - Input gain (0.0 to 1.0)
 - `aux.0` - Auxiliary send level
 
-**Advanced Parameters** (Advanced Dial Controller):
+**Advanced Parameters** (Advanced Dial Controller & Pan Toggle Action):
+- `pan` - Pan position (0.0 = Left, 0.5 = Center, 1.0 = Right)
+- `solo` - Solo state (0 = not solo, 1 = solo)
 - `eq.b1.freq` - EQ band 1 frequency (0.0 to 1.0)
 - `eq.b1.q` - EQ band 1 Q factor (0.0 to 1.0)
 - `eq.b1.gain` - EQ band 1 gain (0.0 to 1.0)
@@ -336,6 +559,7 @@ Commands use the format: `3:::SETD^[channel].[parameter]^[value]`
 - Background music ducking and EQ adjustment
 - Emergency mute for phone calls with Toggle Mute/Solo Action
 - Quick solo isolation for specific audio sources
+- Professional stereo positioning with Pan Toggle Action
 
 ### **Musicians**
 - Live performance backing tracks with real-time EQ
@@ -343,6 +567,7 @@ Commands use the format: `3:::SETD^[channel].[parameter]^[value]`
 - Recording session monitoring with gain staging control
 - Quick instrument processing (Volume + Gain + De-esser)
 - Instant mute/solo for individual instruments during practice
+- Professional stereo field control with Pan Toggle Action
 
 ### **Business Professionals**
 - Conference room audio routing
@@ -403,6 +628,11 @@ Having issues? Check these common solutions first:
    - Verify channel supports mute/solo operations
    - Check mixer connection status
 
+5. **Pan toggle not responding**:
+   - Confirm channel supports pan control
+   - Verify pan values are updating on mixer
+   - Check that N/A displays for non-standard pan positions
+
 For direct technical support, contact us at **support@doitwise.co**
 
 ### Professional Services
@@ -430,6 +660,13 @@ Need additional functionality? We offer custom plugin development:
 - Advanced automation features
 - Enterprise-specific requirements
 
+#### 💼 **Custom Development Solutions**
+Complete audio control system development:
+- Bespoke Stream Deck plugins for any audio hardware
+- Integration with professional audio software (Pro Tools, Logic, etc.)
+- Custom hardware integration solutions
+- Workflow automation systems
+- Multi-platform audio control applications
 
 **Ready to enhance your audio workflow?** Contact us at **support@doitwise.co** to discuss your requirements and receive a personalized consultation.
 
